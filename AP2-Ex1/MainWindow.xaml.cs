@@ -24,5 +24,17 @@ namespace AP2_Ex1
         {
             InitializeComponent();
         }
+
+        private void button_click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.DefaultExt = ".csv";
+            dlg.Filter = "CSV Files (*.csv)|*.csv";
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                //dlg.Filename has the path to the csv file
+            }
+        }
     }
 }
