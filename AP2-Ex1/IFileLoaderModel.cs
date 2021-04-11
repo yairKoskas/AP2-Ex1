@@ -12,8 +12,8 @@ namespace AP2_Ex1
         void LoadCSV();
         void LoadXML();
 
-        String getCSVLine(int x);
-
+        String GetCSVLine(int x);
+        int GetNumOfCSVLines();
         public event Notifier NotifyCSVChanged, NotifyXMLChanged;
     }
 }

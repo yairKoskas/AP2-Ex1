@@ -49,9 +49,14 @@ namespace AP2_Ex1
             NotifyXMLChanged();
         }
 
-        public string getCSVLine(int x)
+        public string GetCSVLine(int x)
         {
             return CSVLines[x];
+        }
+
+        public int GetNumOfCSVLines()
+        {
+            return CSVLines.Count;
         }
     }
 }
