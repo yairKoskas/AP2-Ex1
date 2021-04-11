@@ -6,6 +6,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
+    public delegate void Notifier();
     interface IFileLoaderModel
     {
         void LoadCSV();
@@ -13,7 +14,6 @@ namespace AP2_Ex1
 
         String getCSVLine(int x);
 
-        public delegate void Notifier();
         public event Notifier NotifyCSVChanged, NotifyXMLChanged;
     }
 }
