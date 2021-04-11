@@ -9,8 +9,8 @@ namespace AP2_Ex1
 {
     class FileLoaderModel : IFileLoaderModel
     {
-        List<String> CSVLines;
-        String XMLContent;
+        private List<String> CSVLines;
+        private String XMLContent;
         public event Notifier NotifyCSVChanged;
         public event Notifier NotifyXMLChanged;
 
@@ -19,7 +19,6 @@ namespace AP2_Ex1
             CSVLines = new List<String>();
             XMLContent = "";
         }
-
 
         public void LoadCSV()
         {
@@ -38,7 +37,16 @@ namespace AP2_Ex1
 
         public void LoadXML()
         {
-            throw new NotImplementedException();
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.DefaultExt = ".xml";
+            dlg.Filter = "XML Files (*.xml)|*.xml";
+            Nullable<bool> result = dlg.ShowDialog();
+            if (result == true)
+            {
+                var path = dlg.FileName;
+                XMLContent = File.ReadAllText(path);
+            }
+            NotifyXMLChanged();
         }
 
         public string getCSVLine(int x)
