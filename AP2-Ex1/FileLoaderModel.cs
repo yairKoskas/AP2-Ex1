@@ -19,6 +19,33 @@ namespace AP2_Ex1
             CSVLines = new List<String>();
             XMLContent = "";
         }
+
+        event Notifier IFileLoaderModel.NotifyCSVChanged
+        {
+            add
+            {
+                throw new NotImplementedException();
+            }
+
+            remove
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        event Notifier IFileLoaderModel.NotifyXMLChanged
+        {
+            add
+            {
+                throw new NotImplementedException();
+            }
+
+            remove
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public void LoadCSV()
         {
             OpenFileDialog dlg = new OpenFileDialog();
