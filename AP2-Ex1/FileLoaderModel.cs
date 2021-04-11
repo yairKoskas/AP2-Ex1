@@ -11,8 +11,8 @@ namespace AP2_Ex1
     {
         List<String> CSVLines;
         String XMLContent;
-        public event IFileLoaderModel.Notifier NotifyCSVChanged;
-        public event IFileLoaderModel.Notifier NotifyXMLChanged;
+        public event Notifier NotifyCSVChanged;
+        public event Notifier NotifyXMLChanged;
 
         public FileLoaderModel()
         {
