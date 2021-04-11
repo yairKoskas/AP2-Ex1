@@ -20,31 +20,6 @@ namespace AP2_Ex1
             XMLContent = "";
         }
 
-        event Notifier IFileLoaderModel.NotifyCSVChanged
-        {
-            add
-            {
-                throw new NotImplementedException();
-            }
-
-            remove
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        event Notifier IFileLoaderModel.NotifyXMLChanged
-        {
-            add
-            {
-                throw new NotImplementedException();
-            }
-
-            remove
-            {
-                throw new NotImplementedException();
-            }
-        }
 
         public void LoadCSV()
         {
