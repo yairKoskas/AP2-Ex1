@@ -10,6 +10,9 @@ namespace AP2_Ex1
     {
         void LoadCSV();
         void LoadXML();
+
+        String getCSVLine(int x);
+
         public delegate void Notifier();
         public event Notifier NotifyCSVChanged, NotifyXMLChanged;
     }
