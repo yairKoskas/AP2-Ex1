@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AP2_Ex1
+namespace AP2_Ex1.controls
 {
     /// <summary>
     /// Interaction logic for FileLoaderView.xaml
@@ -24,14 +24,15 @@ namespace AP2_Ex1
             InitializeComponent();
             viewModel = new FileLoaderViewModel();
         }
-        private void CSV_Click(object sender, RoutedEventArgs e)
+
+        private void Load_CSV(object sender, RoutedEventArgs e)
         {
             viewModel.LoadCSV();
         }
-
-        private void XML_Click(object sender, RoutedEventArgs e)
+        private void Load_XML(object sender, RoutedEventArgs e)
         {
             viewModel.LoadXML();
         }
+
     }
 }
