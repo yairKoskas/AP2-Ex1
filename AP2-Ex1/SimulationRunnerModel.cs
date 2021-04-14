@@ -31,6 +31,7 @@ namespace AP2_Ex1
             String line = fileLoader.GetCSVLine(stateController.CurrentIndexOfLine);
             while ( line != null)
             {
+                stateController.CurrentIndexOfLine = stateController.CurrentIndexOfLine + 1;
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(line);
                 NetworkStream stream = tcpClient.GetStream();
                 stream.Write(data, 0, data.Length);

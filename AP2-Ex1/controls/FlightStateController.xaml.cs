@@ -26,7 +26,7 @@ namespace AP2_Ex1.controls
             set 
             { 
                   vm = value;
-                  DataContext = vm;
+                  stateControllerSlider.DataContext = vm;
             }
         }
         public FlightStateController()

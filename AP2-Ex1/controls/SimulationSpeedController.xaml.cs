@@ -26,6 +26,7 @@ namespace AP2_Ex1.controls
             set
             {
                 vm = value;
+                speed.DataContext = vm;
             }
         }
         public SimulationSpeedController()

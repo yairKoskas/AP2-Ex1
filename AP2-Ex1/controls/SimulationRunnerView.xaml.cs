@@ -23,7 +23,10 @@ namespace AP2_Ex1.controls
         public AP2_Ex1.SimulationRunnerVM VM
         {
             get { return vm; }
-            set { vm = value; }
+            set {
+                vm = value;
+                DataContext = vm;
+            }
         }
         public SimulationRunnerView()
         {

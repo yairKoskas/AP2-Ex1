@@ -57,6 +57,10 @@ namespace AP2_Ex1
 
         public string GetCSVLine(int x)
         {
+            if(x>=CSVLines.Count)
+            {
+                return null;
+            }
             return CSVLines[x];
         }
 
