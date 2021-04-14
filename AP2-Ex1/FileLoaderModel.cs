@@ -9,6 +9,7 @@ namespace AP2_Ex1
 {
     public class FileLoaderModel : IFileLoaderModel
     {
+        private const string Fg_path = @"C:\Program Files\FlightGear 2020.3.6\data\Protocol";
         private List<String> CSVLines;
         private String XMLContent;
         public event Notifier NotifyCSVChanged;
@@ -32,7 +33,10 @@ namespace AP2_Ex1
                 var content = File.ReadAllLines(path);
                 CSVLines = new List<string>(content);
             }
-            NotifyCSVChanged();
+            if (NotifyCSVChanged != null)
+            {
+                NotifyCSVChanged();
+            }
         }
 
         public void LoadXML()
@@ -43,10 +47,12 @@ namespace AP2_Ex1
             Nullable<bool> result = dlg.ShowDialog();
             if (result == true)
             {
-                var path = dlg.FileName;
-                XMLContent = File.ReadAllText(path);
+                File.WriteAllText(Fg_path, File.ReadAllText(dlg.FileName));
             }
-            NotifyXMLChanged();
+            if (NotifyXMLChanged != null)
+            {
+                NotifyXMLChanged();
+            }
         }
 
         public string GetCSVLine(int x)
