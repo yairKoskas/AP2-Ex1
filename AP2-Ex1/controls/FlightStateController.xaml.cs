@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace AP2_Ex1.controls
 {
-    /// <summary>
-    /// Interaction logic for FlightStateController.xaml
-    /// </summary>
     public partial class FlightStateController : UserControl
     {
         private FlightStateControllerVM vm;

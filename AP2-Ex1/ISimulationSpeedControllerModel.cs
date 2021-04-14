@@ -4,6 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
+    // controls the simulation speed
     public interface ISimulationSpeedControllerModel
     {
         void increaseSpeed();

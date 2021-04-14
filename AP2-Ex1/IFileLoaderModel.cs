@@ -7,6 +7,8 @@ using System.Text;
 namespace AP2_Ex1
 {
     public delegate void Notifier();
+
+    // loads xml&csv files
     public interface IFileLoaderModel
     {
         void LoadCSV();

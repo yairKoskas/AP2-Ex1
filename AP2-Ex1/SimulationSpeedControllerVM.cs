@@ -4,11 +4,12 @@ using System.Text;
 
 namespace AP2_Ex1
 {
+    // view model for the speed controller
     public class SimulationSpeedControllerVM : ISimulationSpeedControllerVM
     {
         private ISimulationSpeedControllerModel speedControllerModel;
 
-        public string VM_SimulationSpeed { get; set; } // bind to view textbox
+        public string VM_SimulationSpeed { get; set; } // binded to view's textbox (which show the speed)
 
         public SimulationSpeedControllerVM(ISimulationSpeedControllerModel model)
         {

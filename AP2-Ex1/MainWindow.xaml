@@ -14,7 +14,7 @@
             </ToolBar>
         </ToolBarTray>
         <Controls:SimulationSpeedController x:Name="speedControllerView"/>
-        <Controls:FlightStateController.xaml x:Name="stateControllerView"/>
+        <Controls:FlightStateController x:Name="stateControllerView"/>
         <Controls:SimulationRunnerView x:Name="simulationRunnerView"/>
     </Grid>
 </Window>

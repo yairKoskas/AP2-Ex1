@@ -4,6 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
+    // view model for file loader
     public class FileLoaderViewModel : IFileLoaderViewModel
     {
         IFileLoaderModel model;

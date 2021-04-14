@@ -4,6 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
+    // view model for state controller
     public class FlightStateControllerVM
     {
         private IFlightStateControllerModel flightStateController;

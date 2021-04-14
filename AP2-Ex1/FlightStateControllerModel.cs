@@ -4,16 +4,19 @@ using System.Text;
 
 namespace AP2_Ex1
 {
+    // state controller to control the timeline of the flight
     public class FlightStateControllerModel : IFlightStateControllerModel
     {
         public event Notifier notifyNumberOfLinesChanged;
         public event Notifier notifyCurrentIndexChanged;
+
         private int currentIndexOfLine = 0;
         private int numberOfCSVLines = 0;
-        public FlightStateControllerModel()
+
+        public FlightStateControllerModel() { }
+
+        public int NumberOfCSVLines
         {
-        }
-        public int NumberOfCSVLines {
             get { return this.numberOfCSVLines; } 
             set
             {
@@ -24,7 +27,9 @@ namespace AP2_Ex1
                 }
             } 
         }
-        public int CurrentIndexOfLine {
+
+        public int CurrentIndexOfLine
+        {
             get { return this.currentIndexOfLine; }
             set 
             {
@@ -35,6 +40,7 @@ namespace AP2_Ex1
                 }
             } 
         }
+
 
         public void changeIndexOfLine(int x)
         {

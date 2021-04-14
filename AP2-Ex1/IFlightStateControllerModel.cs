@@ -4,6 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
+    // controls the flight
     public interface IFlightStateControllerModel
     {
         public int NumberOfCSVLines { get; set; }

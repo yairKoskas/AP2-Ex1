@@ -3,14 +3,12 @@ using System.Windows;
 
 namespace AP2_Ex1
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        private ISimulationSpeedControllerVM speedController;
         public MainWindow()
         {
+            InitializeComponent();
+
             IFileLoaderModel fileLoaderModel = new FileLoaderModel();
             FileLoaderViewModel fileLoaderVM = new FileLoaderViewModel(fileLoaderModel);
 
@@ -27,7 +25,6 @@ namespace AP2_Ex1
             stateControllerView.VM = stateControllerVM;
             speedControllerView.VM = speedControllerVM;
             simulationRunnerView.VM = simulationRunnerVM;
-            InitializeComponent();
         }
     }
 }

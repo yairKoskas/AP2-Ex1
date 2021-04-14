@@ -4,10 +4,12 @@ using System.Text;
 
 namespace AP2_Ex1
 {
+    // controls the simulation speed
     public class SimulationSpeedControllerModel : ISimulationSpeedControllerModel
     {
-        public const double diffValue = 0.25; // need to be changed
-        public const int fps = 60; // please define it for me... (its for my getTimeToSleep() method)
+        // default values
+        public const double diffValue = 0.25;
+        public const int FPS = 60;
         public const int DEFAULT_SPEED = 1;
 
         private double simulationSpeed;
@@ -20,7 +22,8 @@ namespace AP2_Ex1
             if (speed > 0)
             {
                 simulationSpeed = speed;
-            } else
+            }
+            else
             {
                 simulationSpeed = DEFAULT_SPEED;
             }
@@ -62,7 +65,7 @@ namespace AP2_Ex1
 
         public int getTimeToSleep()
         {
-            return ((int) simulationSpeed * 1000) / fps;
+            return (int) (FPS * simulationSpeed * 1000); // FPS * speed -> convert to millis
         }
     }
 }

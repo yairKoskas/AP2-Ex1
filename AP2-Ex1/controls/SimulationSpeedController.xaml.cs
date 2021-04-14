@@ -13,9 +13,6 @@ using System.Windows.Shapes;
 
 namespace AP2_Ex1.controls
 {
-    /// <summary>
-    /// Interaction logic for SimulationSpeedController.xaml
-    /// </summary>
     public partial class SimulationSpeedController : UserControl
     {
         private SimulationSpeedControllerVM vm;
