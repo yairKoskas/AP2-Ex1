@@ -14,32 +14,30 @@ using System.Windows.Shapes;
 namespace AP2_Ex1.controls
 {
     /// <summary>
-    /// Interaction logic for FlightStateController.xaml
+    /// Interaction logic for SimulationRunnerView.xaml
     /// </summary>
-    public partial class FlightStateController : UserControl
+    public partial class SimulationRunnerView : UserControl
     {
-        private FlightStateControllerVM vm;
+        private SimulationRunnerVM vm;
 
-        public FlightStateControllerVM VM
+        public AP2_Ex1.SimulationRunnerVM VM
         {
             get { return vm; }
-            set 
-            { 
-                  vm = value;
-                  DataContext = vm;
-            }
+            set { vm = value; }
         }
-        public FlightStateController()
+        public SimulationRunnerView()
         {
             InitializeComponent();
         }
-
-        private void stateControllerSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        
+        private void start_Click(object sender, RoutedEventArgs e)
         {
-            vm.changeIndex();
+            vm.startSimulation();
         }
 
-       
-       
+        private void stop_Click(object sender, RoutedEventArgs e)
+        {
+            vm.stopSimulation();
+        }
     }
 }

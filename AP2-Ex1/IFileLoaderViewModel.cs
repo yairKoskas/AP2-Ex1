@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    interface IFileLoaderViewModel
+    public interface IFileLoaderViewModel
     {
         void LoadCSV();
         void LoadXML();

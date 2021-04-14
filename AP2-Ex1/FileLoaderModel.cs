@@ -7,7 +7,7 @@ using Microsoft.Win32;
 
 namespace AP2_Ex1
 {
-    class FileLoaderModel : IFileLoaderModel
+    public class FileLoaderModel : IFileLoaderModel
     {
         private List<String> CSVLines;
         private String XMLContent;

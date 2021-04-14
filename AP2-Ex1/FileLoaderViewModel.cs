@@ -4,13 +4,13 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    class FileLoaderViewModel : IFileLoaderViewModel
+    public class FileLoaderViewModel : IFileLoaderViewModel
     {
         IFileLoaderModel model;
 
-        public FileLoaderViewModel()
+        public FileLoaderViewModel(IFileLoaderModel model)
         {
-            model = new FileLoaderModel();
+            this.model = model;
         }
         public string GetCSVLine(int x)
         {

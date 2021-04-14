@@ -18,7 +18,10 @@ namespace AP2_Ex1
             set
             {
                 this.numberOfCSVLines = value;
-                notifyNumberOfLinesChanged();
+                if (notifyNumberOfLinesChanged != null)
+                {
+                    notifyNumberOfLinesChanged();
+                }
             } 
         }
         public int CurrentIndexOfLine {
@@ -26,7 +29,10 @@ namespace AP2_Ex1
             set 
             {
                 this.currentIndexOfLine = value;
-                notifyCurrentIndexChanged();
+                if (notifyCurrentIndexChanged != null)
+                {
+                    notifyCurrentIndexChanged();
+                }
             } 
         }
 

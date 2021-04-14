@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    class FlightStateControllerVM
+    public class FlightStateControllerVM
     {
         private IFlightStateControllerModel flightStateController;
 

@@ -18,11 +18,19 @@ namespace AP2_Ex1.controls
     /// </summary>
     public partial class FileLoaderView : UserControl
     {
-        IFileLoaderViewModel viewModel;
+        private IFileLoaderViewModel viewModel;
+
+        public IFileLoaderViewModel VM
+        {
+            get { return viewModel; }
+            set
+            {
+                viewModel = value;
+            }
+        }
         public FileLoaderView()
         {
             InitializeComponent();
-            viewModel = new FileLoaderViewModel();
         }
 
         private void Load_CSV(object sender, RoutedEventArgs e)
