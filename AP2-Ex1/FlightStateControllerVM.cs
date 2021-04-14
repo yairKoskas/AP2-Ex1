@@ -11,17 +11,33 @@ namespace AP2_Ex1
         private int currentIndexOfLine =0;
         private int numberOfLines =0;
 
+        public int CurrentIndexOfLine {
+            get { return this.currentIndexOfLine; } 
+            set
+            {
+                this.currentIndexOfLine = value;
+            }
+        }
+
+        public int NumberOfCSVLines
+        {
+            get { return this.numberOfLines; }
+            set
+            {
+                this.numberOfLines = value;
+            }
+        }
         public FlightStateControllerVM(FlightStateControllerModel model)
         {
             this.flightStateController = model;
             model.notifyCurrentIndexChanged += delegate ()
             {
-                currentIndexOfLine = model.CurrentIndexOfLine;
+                CurrentIndexOfLine = model.CurrentIndexOfLine;
             };
 
             model.notifyNumberOfLinesChanged += delegate ()
             {
-                numberOfLines = model.NumberOfCSVLines;
+                NumberOfCSVLines = model.NumberOfCSVLines;
             };
         }
         public void changeIndex()
