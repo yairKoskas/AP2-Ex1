@@ -5,8 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AP2_Ex1.controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             VerticalAlignment="Bottom"
+             Background="LightGray" >
     <Grid>
-            
+        <Button x:Name="inc" Content="+" Height="20" Width="20" FontSize="12" HorizontalAlignment="Right" Margin="0 0 50 0" Background="White" Click="inc_Click" />
+        <TextBlock Text="Speed: " HorizontalAlignment="Right" Width="40" Height="20" Background="White" Margin="0 0 135 0" />
+        <TextBox x:Name="speed" Width="30" Height="20" Margin="0 0 75 0" HorizontalAlignment="Right" Text="{Binding Path=VM_SimulationSpeed, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        <Button x:Name="dec" Content="-" Height="20" Width="20" FontSize="12" HorizontalAlignment="Right" Margin="0 0 110 0" Background="White" />
     </Grid>
 </UserControl>

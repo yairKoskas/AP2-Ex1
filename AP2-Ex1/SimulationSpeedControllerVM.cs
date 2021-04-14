@@ -7,20 +7,34 @@ namespace AP2_Ex1
     class SimulationSpeedControllerVM : ISimulationSpeedControllerVM
     {
         private ISimulationSpeedControllerModel speedControllerModel;
-        double simulationSpeed { get; set; } // bind to view textbox
+        public string VM_SimulationSpeed { get; set; } // bind to view textbox
 
-        public SimulationSpeedControllerVM(ISimulationSpeedControllerModel model, Notifier speedIncrease, Notifier speedDecrease)
+        public SimulationSpeedControllerVM(ISimulationSpeedControllerModel model)
         {
             speedControllerModel = model;
-            model.notifySpeedDecrease += speedDecrease;
-            model.notifySpeedIncrease += speedIncrease;
+            model.notifySpeedDecrease += delegate()
+            {
+                VM_SimulationSpeed = speedControllerModel.getSimulationSpeed().ToString();
+            };
+            model.notifySpeedIncrease += delegate ()
+            {
+                VM_SimulationSpeed = speedControllerModel.getSimulationSpeed().ToString();
+            };
+            VM_SimulationSpeed = speedControllerModel.getSimulationSpeed().ToString();
         }
 
-        public SimulationSpeedControllerVM(Notifier speedIncrease, Notifier speedDecrease)
+        public SimulationSpeedControllerVM()
         {
-            speedControllerModel = new SimulationSpeedControllerModel(simulationSpeed);
-            speedControllerModel.notifySpeedDecrease += speedDecrease;
-            speedControllerModel.notifySpeedIncrease += speedIncrease;
+            speedControllerModel = new SimulationSpeedControllerModel(0);
+            speedControllerModel.notifySpeedDecrease += delegate ()
+            {
+                VM_SimulationSpeed = speedControllerModel.getSimulationSpeed().ToString();
+            };
+            speedControllerModel.notifySpeedIncrease += delegate ()
+            {
+                VM_SimulationSpeed = speedControllerModel.getSimulationSpeed().ToString();
+            };
+            VM_SimulationSpeed = speedControllerModel.getSimulationSpeed().ToString();
         }
 
         public void decreaseSpeed()

@@ -32,7 +32,10 @@ namespace AP2_Ex1
                 var content = File.ReadAllLines(path);
                 CSVLines = new List<string>(content);
             }
-            NotifyCSVChanged();
+            if (NotifyCSVChanged != null)
+            {
+                NotifyCSVChanged();
+            }
         }
 
         public void LoadXML()
@@ -46,7 +49,10 @@ namespace AP2_Ex1
                 var path = dlg.FileName;
                 XMLContent = File.ReadAllText(path);
             }
-            NotifyXMLChanged();
+            if (NotifyXMLChanged != null)
+            {
+                NotifyXMLChanged();
+            }
         }
 
         public string GetCSVLine(int x)
