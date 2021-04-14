@@ -11,14 +11,23 @@ namespace AP2_Ex1
         private ISimulationSpeedControllerVM speedController;
         public MainWindow()
         {
-            InitializeComponent();
-            speedController = new SimulationSpeedControllerVM();
-            this.DataContext = speedController;
-        }
+            IFileLoaderModel fileLoaderModel = new FileLoaderModel();
+            FileLoaderViewModel fileLoaderVM = new FileLoaderViewModel(fileLoaderModel);
 
-        private void inc_Click(object sender, EventArgs args)
-        {
-            speedController.increaseSpeed();
+            IFlightStateControllerModel stateControllerModel = new FlightStateControllerModel();
+            FlightStateControllerVM stateControllerVM = new FlightStateControllerVM(stateControllerModel);
+
+            ISimulationSpeedControllerModel speedControllerModel = new SimulationSpeedControllerModel(1);
+            SimulationSpeedControllerVM speedControllerVM = new SimulationSpeedControllerVM(speedControllerModel);
+
+            ISimulationRunnerModel simulationRunnerModel = new SimulationRunnerModel(fileLoaderModel, stateControllerModel, speedControllerModel);
+            SimulationRunnerVM simulationRunnerVM = new SimulationRunnerVM(simulationRunnerModel);
+
+            fileLoaderView.VM = fileLoaderVM;
+            stateControllerView.VM = stateControllerVM;
+            speedControllerView.VM = speedControllerVM;
+            simulationRunnerView.VM = simulationRunnerVM;
+            InitializeComponent();
         }
     }
 }

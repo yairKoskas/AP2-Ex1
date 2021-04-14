@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    interface IFlightStateControllerModel
+    public interface IFlightStateControllerModel
     {
         public int NumberOfCSVLines { get; set; }
         public void changeIndexOfLine(int x);

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    class FlightStateControllerModel : IFlightStateControllerModel
+    public class FlightStateControllerModel : IFlightStateControllerModel
     {
         public event Notifier notifyNumberOfLinesChanged;
         public event Notifier notifyCurrentIndexChanged;

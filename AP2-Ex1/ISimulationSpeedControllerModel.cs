@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    interface ISimulationSpeedControllerModel
+    public interface ISimulationSpeedControllerModel
     {
         void increaseSpeed();
         void decreaseSpeed();

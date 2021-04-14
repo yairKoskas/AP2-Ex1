@@ -4,10 +4,10 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    interface ISimulationSpeedControllerVM
+    public interface ISimulationSpeedControllerVM
     {
         void increaseSpeed();
         void decreaseSpeed();
-        void setSpeed(double speed);
+        void setSpeed();
     }
 }

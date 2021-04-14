@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    class SimulationSpeedControllerModel : ISimulationSpeedControllerModel
+    public class SimulationSpeedControllerModel : ISimulationSpeedControllerModel
     {
         public const double diffValue = 0.25; // need to be changed
         public const int fps = 60; // please define it for me... (its for my getTimeToSleep() method)

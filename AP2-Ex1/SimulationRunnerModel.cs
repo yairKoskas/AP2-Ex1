@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace AP2_Ex1
 {
-    class SimulationRunnerModel : ISimulationRunnerModel
+    public class SimulationRunnerModel : ISimulationRunnerModel
     {
         private Boolean stop = true;
         private IFileLoaderModel fileLoader;

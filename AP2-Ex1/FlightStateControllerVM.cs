@@ -27,7 +27,7 @@ namespace AP2_Ex1
                 this.numberOfLines = value;
             }
         }
-        public FlightStateControllerVM(FlightStateControllerModel model)
+        public FlightStateControllerVM(IFlightStateControllerModel model)
         {
             this.flightStateController = model;
             model.notifyCurrentIndexChanged += delegate ()

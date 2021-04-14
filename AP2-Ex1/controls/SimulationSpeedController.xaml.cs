@@ -18,6 +18,16 @@ namespace AP2_Ex1.controls
     /// </summary>
     public partial class SimulationSpeedController : UserControl
     {
+        private SimulationSpeedControllerVM vm;
+
+        public SimulationSpeedControllerVM VM
+        {
+            get { return vm; }
+            set
+            {
+                vm = value;
+            }
+        }
         public SimulationSpeedController()
         {
             InitializeComponent();
@@ -25,7 +35,17 @@ namespace AP2_Ex1.controls
 
         private void inc_Click(object sender, RoutedEventArgs e)
         {
+            vm.increaseSpeed();
+        }
 
+        private void speed_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            vm.setSpeed();
+        }
+
+        private void dec_Click(object sender, RoutedEventArgs e)
+        {
+            vm.decreaseSpeed();
         }
     }
 }

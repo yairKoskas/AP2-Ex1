@@ -4,13 +4,15 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    class SimulationSpeedControllerVM : ISimulationSpeedControllerVM
+    public class SimulationSpeedControllerVM : ISimulationSpeedControllerVM
     {
         private ISimulationSpeedControllerModel speedControllerModel;
+
         public string VM_SimulationSpeed { get; set; } // bind to view textbox
 
         public SimulationSpeedControllerVM(ISimulationSpeedControllerModel model)
         {
+
             speedControllerModel = model;
             model.notifySpeedDecrease += delegate()
             {
@@ -47,9 +49,9 @@ namespace AP2_Ex1
             speedControllerModel.increaseSpeed();
         }
 
-        public void setSpeed(double speed)
+        public void setSpeed()
         {
-            speedControllerModel.setSpeed(speed);
+            speedControllerModel.setSpeed(double.Parse(VM_SimulationSpeed, System.Globalization.CultureInfo.InvariantCulture));
         }
     }
 }

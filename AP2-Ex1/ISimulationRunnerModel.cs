@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AP2_Ex1
 {
-    interface ISimulationRunnerModel
+    public interface ISimulationRunnerModel
     {
         void startSimulation();
         void stopSimulation();
